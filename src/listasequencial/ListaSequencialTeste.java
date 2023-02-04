@@ -18,5 +18,8 @@ public class ListaSequencialTeste {
 
         System.out.println(numeros.buscarElemento(1));
         System.out.println(numeros.buscarPosicao(2));
+
+        System.out.println("\nContém 3? " + numeros.contem(3));
+        System.out.println("Contém 2? " + numeros.contem(2));
     }
 }

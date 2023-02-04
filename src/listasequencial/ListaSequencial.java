@@ -61,6 +61,10 @@ public class ListaSequencial<T> {
         //Outra forma de fazer a linha acima é deixar "tamanho" em vez de "tamanho - 1" no laço. Porém, ainda iria precisar do --tamanho.
     }
 
+    public boolean contem(T elemento) {
+        return buscarPosicao(elemento) >= 0;
+    }
+
 
 
     public void garantirCapacidade() {
