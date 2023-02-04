@@ -13,7 +13,7 @@ public class ListaSequencialTeste {
         numeros.adicionar(3,3);
         System.out.println(numeros);
 
-        numeros.remover(2);
+        numeros.removerPosicao(2);
         System.out.println(numeros);
 
         System.out.println("\nElemento na 2ª posição: " + numeros.buscarElemento(1));
@@ -26,5 +26,9 @@ public class ListaSequencialTeste {
         System.out.println("\n" + numeros);
         System.out.println("Última posição de 0: " + numeros.ultimaPosicao(0));
         System.out.println("Última posição de 9: " + numeros.ultimaPosicao(9));
+
+        System.out.println("\nRemoveu o elemento 0? " + numeros.removerElemento(0));
+        System.out.println("Removeu o elemento 9? " + numeros.removerElemento(9));
+        System.out.println(numeros);
     }
 }

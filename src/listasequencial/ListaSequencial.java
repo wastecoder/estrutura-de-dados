@@ -51,7 +51,7 @@ public class ListaSequencial<T> {
         return -1;
     }
 
-    public void remover(int posicao) {
+    public void removerPosicao(int posicao) {
         validarPosicao(posicao);
 
         for (int i = posicao; i < tamanho - 1; i++) {
@@ -59,6 +59,15 @@ public class ListaSequencial<T> {
         }
         elementos[--tamanho] = null; //Diminui o tamanho e coloca null no último.
         //Outra forma de fazer a linha acima é deixar "tamanho" em vez de "tamanho - 1" no laço. Porém, ainda iria precisar do --tamanho.
+    }
+
+    public boolean removerElemento(T elemento) {
+        int posicao = buscarPosicao(elemento); //Ou ultimaPosicao()
+        if (posicao >= 0) {
+            removerPosicao(posicao);
+            return true;
+        }
+        return false;
     }
 
     public boolean contem(T elemento) {
@@ -89,7 +98,7 @@ public class ListaSequencial<T> {
     }
 
     public void validarPosicao(int posicao) {
-        if (posicao < 0 || posicao >= tamanho) throw new IllegalArgumentException("Posição inválida");
+        if (posicao < 0 || posicao >= tamanho) throw new IllegalArgumentException("Posição inválida: " + posicao);
     }
 
     public int tamanho() {
