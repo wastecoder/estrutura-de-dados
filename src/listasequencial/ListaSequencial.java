@@ -83,6 +83,13 @@ public class ListaSequencial<T> {
         return -1;
     }
 
+    public void limpar() {
+//        elementos = (T[]) new Object[tamanho]; //Ambas soluções ajudam o GC, escolha uma.
+        for (int i = 0; i < tamanho; i++) elementos[i] = null;
+
+        tamanho = 0;
+    }
+
 
 
     public void garantirCapacidade() {
