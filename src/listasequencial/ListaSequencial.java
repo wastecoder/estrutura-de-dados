@@ -65,6 +65,15 @@ public class ListaSequencial<T> {
         return buscarPosicao(elemento) >= 0;
     }
 
+    public int ultimaPosicao(T elemento) {
+        for (int i = tamanho - 1; i >= 0; i--) {
+            if (elementos[i].equals(elemento)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 
 
     public void garantirCapacidade() {

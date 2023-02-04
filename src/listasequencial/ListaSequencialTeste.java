@@ -16,10 +16,15 @@ public class ListaSequencialTeste {
         numeros.remover(2);
         System.out.println(numeros);
 
-        System.out.println(numeros.buscarElemento(1));
-        System.out.println(numeros.buscarPosicao(2));
+        System.out.println("\nElemento na 2ª posição: " + numeros.buscarElemento(1));
+        System.out.println("Posição do elemento 2: " + numeros.buscarPosicao(2));
 
         System.out.println("\nContém 3? " + numeros.contem(3));
         System.out.println("Contém 2? " + numeros.contem(2));
+
+        numeros.adicionar(0);
+        System.out.println("\n" + numeros);
+        System.out.println("Última posição de 0: " + numeros.ultimaPosicao(0));
+        System.out.println("Última posição de 9: " + numeros.ultimaPosicao(9));
     }
 }
