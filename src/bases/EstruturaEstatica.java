@@ -52,9 +52,13 @@ public class EstruturaEstatica<T> {
         return tamanho == 0;
     }
 
+    public int tamanho() {
+        return tamanho;
+    }
 
 
-    public void garantirCapacidade() {
+
+    protected void garantirCapacidade() {
         if (tamanho == elementos.length) {
             int novaCapacidade = (tamanho * 3)/2 + 1;
             T[] elementosNovos = (T[]) new Object[novaCapacidade];
@@ -66,12 +70,8 @@ public class EstruturaEstatica<T> {
         }
     }
 
-    public void validarPosicao(int posicao) {
+    protected void validarPosicao(int posicao) {
         if (posicao < 0 || posicao >= tamanho) throw new IllegalArgumentException("Posição inválida: " + posicao);
-    }
-
-    public int tamanho() {
-        return tamanho;
     }
 
     @Override
