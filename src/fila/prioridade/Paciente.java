@@ -2,11 +2,11 @@ package fila.prioridade;
 
 public class Paciente implements Comparable<Paciente> {
     private String nome;
-    private int prioridade;
+    private Integer prioridade;
 
-    public Paciente(String nome, int prioridade) {
+    public Paciente(String nome, Prioridade prioridade) {
         this.nome = nome;
-        this.prioridade = prioridade;
+        setPrioridade(prioridade);
     }
 
     public String getNome() {
@@ -17,12 +17,14 @@ public class Paciente implements Comparable<Paciente> {
         this.nome = nome;
     }
 
-    public int getPrioridade() {
-        return prioridade;
+    public Prioridade getPrioridade() {
+        return Prioridade.valueOf(this.prioridade);
     }
 
-    public void setPrioridade(int prioridade) {
-        this.prioridade = prioridade;
+    public void setPrioridade(Prioridade prioridade) {
+        if (prioridade != null) {
+            this.prioridade = prioridade.getCode();
+        }
     }
 
     @Override
@@ -35,6 +37,6 @@ public class Paciente implements Comparable<Paciente> {
 
     @Override
     public int compareTo(Paciente p) {
-        return Integer.compare(prioridade, p.getPrioridade());
+        return Integer.compare(prioridade, p.getPrioridade().getCode());
     }
 }

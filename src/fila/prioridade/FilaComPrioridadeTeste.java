@@ -14,9 +14,9 @@ public class FilaComPrioridadeTeste {
 
         FilaComPrioridade<Paciente> pacientes = new FilaComPrioridade<>();
 
-        pacientes.enfileirar(new Paciente("A", 3));
-        pacientes.enfileirar(new Paciente("B", 1));
-        pacientes.enfileirar(new Paciente("C", 2));
+        pacientes.enfileirar(new Paciente("A", Prioridade.VERDE));
+        pacientes.enfileirar(new Paciente("B", Prioridade.VERMELHO));
+        pacientes.enfileirar(new Paciente("C", Prioridade.AMARELO));
         System.out.println("\n" +pacientes);
         System.out.println("Desenfileirado: " + pacientes.desenfileirar());
         System.out.println(pacientes);
