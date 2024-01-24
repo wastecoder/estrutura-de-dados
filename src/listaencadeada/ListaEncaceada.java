@@ -5,6 +5,8 @@ public class ListaEncaceada<T> {
     private No<T> ultimo;
     private int tamanho;
 
+    private final int NAO_ENCONTRADO = -1;
+
     public void adicionar(T elemento) {
         No<T> celula = new No<>(elemento);
         if (tamanho == 0) { //É o primeiro
@@ -51,23 +53,41 @@ public class ListaEncaceada<T> {
         }
     }
 
-    public int buscaLinear(T elemento) {
-        int posicao = -1;
+    private No<T> buscarNo(int posicao) {
+        validarPosicao(posicao);
 
-        int aux = 0;
-        for (No<T> atual = this.inicio; atual != null; atual = atual.getProximo()) {
-            if (atual.getElemento().equals(elemento)) {
-                return aux;
-            }
-            aux++;
+        No<T> atual = this.inicio;
+        for (int i = 0; i < posicao; i++) {
+            atual = atual.getProximo();
         }
 
-        return posicao;
+        return atual;
+    }
+
+    public T buscarElemento(int posicao) {
+        return this.buscarNo(posicao).getElemento();
+    }
+
+    public int buscarPosicao(T elemento) {
+        int posicao = 0;
+        for (No<T> atual = this.inicio; atual != null; atual = atual.getProximo()) {
+            if (atual.getElemento().equals(elemento)) {
+                return posicao;
+            }
+            posicao++;
+        }
+
+        return NAO_ENCONTRADO;
     }
 
 
     public int getTamanho() {
         return this.tamanho;
+    }
+
+    private void validarPosicao(int posicao) {
+        if (posicao < 0 || posicao >= tamanho)
+            throw new IllegalArgumentException("Posição inválida: " + posicao);
     }
 
     @Override

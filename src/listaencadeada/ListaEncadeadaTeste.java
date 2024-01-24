@@ -11,7 +11,8 @@ public class ListaEncadeadaTeste {
 
         System.out.println(lista1);
         System.out.println("Tamanho [lista1] = " + lista1.getTamanho());
-        System.out.println("Posição do elemento [3] = " + lista1.buscaLinear(3));
+        System.out.println("Posição do elemento [3] = " + lista1.buscarPosicao(3));
+        System.out.println("Elemento na posição [0] = " + lista1.buscarElemento(0));
 
 
 
@@ -22,7 +23,7 @@ public class ListaEncadeadaTeste {
 
         System.out.println(lista2);
         System.out.println("Tamanho [lista2] = " + lista2.getTamanho());
-        System.out.println("Posição do elemento [Carlos] = " + lista2.buscaLinear("Carlos"));
+        System.out.println("Posição do elemento [Carlos] = " + lista2.buscarPosicao("Carlos"));
 
         lista2.limpar();
         System.out.println(lista2);
