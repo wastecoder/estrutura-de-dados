@@ -20,6 +20,7 @@ public class ListaEncadeadaTeste {
         ListaEncaceada<String> lista2 = new ListaEncaceada<>();
         lista2.adicionar("João");
         lista2.adicionar("Maria");
+        lista2.adicionar(1, "Ana");
 
         System.out.println(lista2);
         System.out.println("Tamanho [lista2] = " + lista2.getTamanho());

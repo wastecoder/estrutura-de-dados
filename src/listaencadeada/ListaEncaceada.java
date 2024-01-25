@@ -18,6 +18,21 @@ public class ListaEncaceada<T> {
         this.tamanho++;
     }
 
+    public void adicionar(int posicao, T elemento) {
+        if (posicao == tamanho) { //Última posição ou lista vazia
+            adicionar(elemento);
+        } else if (posicao == 0) { //Primeira posição
+            inicio = new No<>(elemento, inicio);
+            tamanho++;
+        } else { //No meio
+            No<T> noAnterior = buscarNo(posicao - 1);
+            No<T> proximoNo = noAnterior.getProximo();
+            No<T> noNovo = new No<>(elemento, proximoNo);
+            noAnterior.setProximo(noNovo);
+            tamanho++;
+        }
+    }
+
     public void limpar() {
         for (No<T> atual = this.inicio; atual != null;) {
             No<T> proximo = atual.getProximo();
@@ -100,7 +115,7 @@ public class ListaEncaceada<T> {
 
         No<T> atual = this.inicio;
         for (int i = 0; i < this.tamanho - 1; i++) {
-            builder.append(atual.getElemento()).append(",");
+            builder.append(atual.getElemento()).append(", ");
             atual = atual.getProximo();
         }
         builder.append(atual.getElemento()).append("]");
