@@ -6,12 +6,13 @@ Projeto de estrutura de dados com Java
 - Nele é **criado** as principais estrutura de dados e depois utilizado as **prontas** disponibilizadas pelo Java.
 - As estruturas usadas são inspiradas no **source code** do Java, seguidas de exercícios simples.
 
-## Estrutura de dados
+## Estruturas de dados implementadas
 - [x] Lista sequencial ⸻ *ArrayList*
-- [x] Pilha ⸻ *Stack*
-- [x] Fila simples ⸻ *Queue*
+- [x] Pilha estática e dinâmica ⸻ *Stack*
+- [x] Fila estática e dinâmica ⸻ *Queue*
 - [x] Fila com prioridade ⸻ *PriorityQueue*
-- [x] Lista encadeada simples ⸻ *LinkedList*
+- [x] Lista encadeada simples
+- [x] Lista duplamente encadeada ⸻ *LinkedList*
 - [ ] Árvores
 - [ ] Grafos
 - [ ] Maps
