@@ -13,6 +13,6 @@ Projeto de estrutura de dados com Java
 - [x] Fila com prioridade ⸻ *PriorityQueue*
 - [x] Lista encadeada simples
 - [x] Lista duplamente encadeada ⸻ *LinkedList*
-- [ ] Árvores
+- [x] Árvore binária de busca
 - [ ] Grafos
 - [ ] Maps
